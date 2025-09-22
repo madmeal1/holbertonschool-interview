@@ -6,7 +6,7 @@ def canUnlockAll(boxes):
     """
     if not boxes or not isinstance(boxes, list):
         return False
- 
+
     opened = set([0])
     keys = [0]
 
