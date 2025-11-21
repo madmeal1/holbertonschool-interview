@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include "binary_trees.h"
 #include <stdlib.h>
 
@@ -10,6 +10,7 @@
 static heap_t *swap_up(heap_t *node)
 {
 	int tmp;
+
 	while (node->parent && node->n > node->parent->n)
 	{
 		tmp = node->n;
@@ -17,7 +18,7 @@ static heap_t *swap_up(heap_t *node)
 		node->parent->n = tmp;
 		node = node->parent;
 	}
-	return node;
+	return (node);
 }
 
 /**
@@ -29,6 +30,7 @@ static binary_tree_t *find_parent_bfs(binary_tree_t *root)
 {
 	binary_tree_t **queue, *parent = NULL;
 	size_t front = 0, rear = 0, size = 1024;
+
 	if (!root)
 		return (NULL);
 	queue = malloc(sizeof(binary_tree_t *) * size);
@@ -44,7 +46,7 @@ static binary_tree_t *find_parent_bfs(binary_tree_t *root)
 		queue[rear++] = parent->right;
 	}
 	free(queue);
-	return parent;
+	return (parent);
 }
 
 /**
@@ -81,5 +83,5 @@ heap_t *heap_insert(heap_t **root, int value)
 			return (NULL);
 		parent->right = new_node;
 	}
-	return swap_up(new_node);
+	return (swap_up(new_node));
 }
