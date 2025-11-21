@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Minimum operations module for H problem."""
 def minOperations(n):
     """Calculate the fewest number of operations to get n H characters."""
     if n < 2:
