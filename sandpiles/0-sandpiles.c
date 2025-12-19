@@ -1,7 +1,12 @@
 
 #include "sandpiles.h"
 
-/* Checks if a sandpile grid is stable */
+/**
+ * sandpile_is_stable - Checks if a sandpile grid is stable
+ * @arr: 3x3 sandpile grid
+ *
+ * Return: 1 if stable, 0 if unstable
+ */
 int sandpile_is_stable(int arr[3][3])
 {
 	for (int y = 0; y < 3; y++)
@@ -11,7 +16,11 @@ int sandpile_is_stable(int arr[3][3])
 	return (1);
 }
 
-/* Adds two sandpiles together */
+/**
+ * sandpile_add - Adds two sandpiles together
+ * @dest: Destination sandpile grid (result)
+ * @src: Source sandpile grid (added to dest)
+ */
 void sandpile_add(int dest[3][3], int src[3][3])
 {
 	for (int y = 0; y < 3; y++)
@@ -19,7 +28,10 @@ void sandpile_add(int dest[3][3], int src[3][3])
 			dest[y][x] += src[y][x];
 }
 
-/* Prints a sandpile grid */
+/**
+ * sandpile_print - Prints a sandpile grid
+ * @arr: 3x3 sandpile grid to print
+ */
 void sandpile_print(int arr[3][3])
 {
 	for (int y = 0; y < 3; y++)
@@ -34,7 +46,10 @@ void sandpile_print(int arr[3][3])
 	}
 }
 
-/* Performs a single toppling round on a sandpile */
+/**
+ * sandpile_topple - Performs a single toppling round on a sandpile
+ * @arr: 3x3 sandpile grid to topple
+ */
 void sandpile_topple(int arr[3][3])
 {
 	int buffer[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
@@ -60,7 +75,11 @@ void sandpile_topple(int arr[3][3])
 	sandpile_add(arr, buffer);
 }
 
-/* Sums two sandpiles and stabilizes the result */
+/**
+ * sandpiles_sum - Sums two sandpiles and stabilizes the result
+ * @gridA: First sandpile grid (result)
+ * @gridB: Second sandpile grid
+ */
 void sandpiles_sum(int gridA[3][3], int gridB[3][3])
 {
 	sandpile_add(gridA, gridB);
