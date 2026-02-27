@@ -40,8 +40,7 @@ def main():
                 size_str = match.group(4)
 
                 try:
-                    size = int(size_str)
-                    total_size += size
+                    total_size += int(size_str)
                 except (TypeError, ValueError):
                     pass
 
@@ -57,9 +56,9 @@ def main():
 
     except KeyboardInterrupt:
         print_stats(total_size, counts)
-        raise
+        return
     else:
-        pass
+        print_stats(total_size, counts)
 
 
 if __name__ == "__main__":
