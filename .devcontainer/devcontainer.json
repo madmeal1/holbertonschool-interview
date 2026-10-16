@@ -10,8 +10,15 @@
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-python.flake8"
+      ],
+      "settings": {
+        "flake8.args": [
+          "--max-line-length=79"
       ]
     }
   }
+}
 }
